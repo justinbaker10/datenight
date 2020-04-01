@@ -15,10 +15,9 @@ const mealHeaders = new Headers({
         .then(function(data) {
           const mealData = data.meals[0]
           const mealName = `<h2>${mealData.strMeal}</h2>`
-          const mealPic = `<img src=${mealData.strMealThumb}>`  
-          const mealInstruct = `<p>${mealData.strInstructions}</p>`    
-          mealContainer.innerHTML = mealName + mealPic + mealInstruct
-          
+          const mealPic = `<img src=${mealData.strMealThumb}>`
+          const mealInstruct = `<p>${mealData.strInstructions}</p>`
+          mealContainer.innerHTML = mealName + mealPic + mealInstruct        
         })
   
     }
