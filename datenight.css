@@ -1,3 +1,26 @@
 body {
-    background-color: hsl(0, 0, 20%);
+    background-color: grey;
 }
+h1 {
+    color: white;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    font-size: 75px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+#mybox {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+#mybox > * {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 40px 100px 40px;
+    background-color: lightgrey;
+    border-color: black;
+    border-radius: 20px;
+    border-style: solid;
+    
+}
+

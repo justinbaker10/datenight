@@ -4,16 +4,36 @@
         <title>DateNight</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="datenight.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+
     </head>
     <body>
         <h1>DateNight</h1>
 
-        <hr /> 
-
-        <button class="btn btn-primary" id="generateCocktailBtn">Generate Drink</button> 
-
+        <div id="mybox">
+            <div id="foodsec">
+                <p>What are you in the mood for?</p>
+                <input type="text">
+                <button type="button" class="btn btn-secondary btn-lg" id="generateMealBtn">Let's Eat</button>
+            </div>
+            <div id="drinksec">
+                <p>What would you like to drink?</p>
+                <input type="text">
+                <button type="button" class="btn btn-secondary btn-lg" id="generateCocktailBtn">Let's Drink</button>
+            </div>
+            <div id="bothsec">
+                <p>Get me both</p>
+                <input type="text">
+                <button type="button" class="btn btn-secondary btn-lg">Wine & Dine</button>
+            </div>
+    </div>
+        <div id='mealContainer'> </div>
         <div id="DrinkContainer"></div> 
 
-        <script src="wiley-cocktail-api.js"></script>
     </body>
+
+    <script src='meal.js'></script>
+    <script src="wiley-cocktail-api.js"></script>
+
 </html>
