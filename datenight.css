@@ -23,3 +23,21 @@ h1 {
     border-style: solid;
     
 }
+#mealContainer {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Gotu', sans-serif;
+}
+#instructions {
+    max-width: 900px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    margin: 0 auto;
+}
+#dish {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}

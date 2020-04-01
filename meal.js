@@ -14,17 +14,10 @@ const mealHeaders = new Headers({
       })
         .then(function(data) {
           const mealData = data.meals[0]
-          const mealName = `<h2>${mealData.strMeal}</h2>`
+          const mealName = `<h2 id="dish">${mealData.strMeal}</h2>`
           const mealPic = `<img src=${mealData.strMealThumb}>`
-          const mealInstruct = `<p>${mealData.strInstructions}</p>`
+          const mealInstruct = `<p id="instructions">${mealData.strInstructions}</p>`
           mealContainer.innerHTML = mealName + mealPic + mealInstruct        
         })
   
     }
-
-    //.then(function(data) {
-      // console.log(data)
-      // const mealImage = data[0].url
-      // const mealPic = `<img src=${mealImage}>`    //back tick with ${} means your working with template literal 
-
-      //  mealContainer.innerHTML = mealPic
