@@ -21,5 +21,5 @@
          const DrinkInstruc = `<p>${Drinkdata.strInstructions}</p>`
          const DrinkPicture = ` <img src=${Drinkdata.strDrinkThumb}> ` 
         
-         DrinkContainer.innerHTML=DrinkName+DrinkInstruc+DrinkPicture
+         DrinkContainer.innerHTML=DrinkName+DrinkPicture+DrinkInstruc
     })}
