@@ -12,12 +12,14 @@ const mealHeaders = new Headers({
           return response.json()
            
       })
-        .then(function(data) {
+        .then(getMealData)
+
+        function getMealData (data) {
           const mealData = data.meals[0]
           const mealName = `<h2 id="dish">${mealData.strMeal}</h2>`
           const mealPic = `<img src=${mealData.strMealThumb}>`
           const mealInstruct = `<p id="instructions">${mealData.strInstructions}</p>`
           mealContainer.innerHTML = mealName + mealPic + mealInstruct        
-        })
+        }
   
     }

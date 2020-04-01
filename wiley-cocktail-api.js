@@ -13,13 +13,17 @@
                 console.log("response is good")
             return response.json() 
         })
-         .then(function(data) { 
-         console.log(data)
-         const Drinkdata = data.drinks[0]
-         console.log(Drinkdata.strInstructions) 
-         const DrinkName = `<h2>${Drinkdata.strDrink}</h2>`
-         const DrinkInstruc = `<p>${Drinkdata.strInstructions}</p>`
-         const DrinkPicture = ` <img src=${Drinkdata.strDrinkThumb}> ` 
-        
-         DrinkContainer.innerHTML=DrinkName+DrinkPicture+DrinkInstruc
-    })}
+         .then(getDrinkData)}
+
+
+         function getDrinkData (data) { 
+            console.log(data)
+            const Drinkdata = data.drinks[0]
+            console.log(Drinkdata.strInstructions) 
+            const DrinkName = `<h2 id="dish">${Drinkdata.strDrink}</h2>`
+            const DrinkInstruc = `<p id="instructions">${Drinkdata.strInstructions}</p>`
+            const DrinkPicture = ` <img src=${Drinkdata.strDrinkThumb}> ` 
+           
+            DrinkContainer.innerHTML=DrinkName+DrinkPicture+DrinkInstruc
+      
+       }
