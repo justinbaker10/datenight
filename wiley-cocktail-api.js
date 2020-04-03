@@ -22,7 +22,7 @@
             console.log(Drinkdata.strInstructions) 
             const DrinkName = `<h2 id="dish">${Drinkdata.strDrink}</h2>`
             const DrinkInstruc = `<p id="instructions">${Drinkdata.strInstructions}</p>`
-            const DrinkPicture = ` <img src=${Drinkdata.strDrinkThumb}> ` 
+            const DrinkPicture = ` <img src=${Drinkdata.strDrinkThumb} class="img-fluid" alt="Responsive image"> ` 
            
             DrinkContainer.innerHTML=DrinkName+DrinkPicture+DrinkInstruc
       
