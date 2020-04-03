@@ -1,7 +1,7 @@
-body {
+#pagebody {
     background-color: grey;
 }
-h1 {
+#pagelogo {
     color: white;
     font-family: 'Liu Jian Mao Cao', cursive;
     font-size: 75px;
@@ -48,4 +48,11 @@ h1 {
 }
 #bothp {
     text-align: center;
+}
+#drinkCard {
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 3px;
+    background-color: lightgrey;
 }

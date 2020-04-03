@@ -16,10 +16,15 @@ const mealHeaders = new Headers({
 
         function getMealData (data) {
           const mealData = data.meals[0]
-          const mealName = `<h2 id="dish">${mealData.strMeal}</h2>`
-          const mealPic = `<img src=${mealData.strMealThumb}>`
-          const mealInstruct = `<p id="instructions">${mealData.strInstructions}</p>`
-          mealContainer.innerHTML = mealName + mealPic + mealInstruct        
+          const mealCard = `<div class="card" id="drinkCard" style="width: 18rem;">
+            <img src=${mealData.strMealThumb} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${mealData.strMeal}</h5>
+              <a href="#" class="btn btn-secondary">Instructions</a>
+            </div>
+          </div>`
+          
+          mealContainer.innerHTML = mealCard       
         }
   
     }

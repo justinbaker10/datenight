@@ -20,10 +20,21 @@
             console.log(data)
             const Drinkdata = data.drinks[0]
             console.log(Drinkdata.strInstructions) 
-            const DrinkName = `<h2 id="dish">${Drinkdata.strDrink}</h2>`
-            const DrinkInstruc = `<p id="instructions">${Drinkdata.strInstructions}</p>`
-            const DrinkPicture = ` <img src=${Drinkdata.strDrinkThumb}> ` 
+            const drinkCard = `<div class="card" id="drinkCard" style="width: 18rem;">
+            <img src=${Drinkdata.strDrinkThumb} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${Drinkdata.strDrink}</h5>
+              
+            </div>
+          </div>`
            
-            DrinkContainer.innerHTML=DrinkName+DrinkPicture+DrinkInstruc
+            DrinkContainer.innerHTML=drinkCard
       
        }
+    /*
+       const drinkInstrButton = document.getElementById("instructionsButton")
+       drinkInstrButton.addEventListener("click",popOut)
+       function popout() {
+
+       }
+       */
