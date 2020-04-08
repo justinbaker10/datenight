@@ -3,36 +3,76 @@
     <head>
         <title>DateNight</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="datenight.css">
+        <link rel="stylesheet" type="text/css" href="css/datenight.css">
         <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
     <body>
-        <h1>DateNight</h1>
-
+        
+        <canvas id="canvas-image-blending" width="1300" height='150' class='col-sm-12'></canvas>
+        <!-- <h1>DateNight</h1> -->
+    
         <div id="mybox">
             <div id="foodsec">
-                <p>What are you in the mood for?</p>
-                <input type="text">
-                <button type="button" class="btn btn-secondary btn-lg" id="generateMealBtn">Let's Eat</button>
+                <p id='foodHeading'>What are you in the mood for?</p>
+                
+                <form id='foodSearchForm'>
+                    <!-- <input type="text" id='foodSearch'> -->
+                    <div><strong><p>Choose by Category:</p></strong></div>
+                    <select id='categorySelector'>                    
+                        <option value='Select Category' class='default'>Select Category</option>
+                    </select>
+                    <div><strong><p id='areaText'>Choose by Area:</p></strong></div>
+                    <select id='areaSelector'>                    
+                        <option value='Select Area' class='default'>Select Area</option>
+                    </select>
+                    <!-- <select id='dropFoodSearch'></select> -->
+                    <!-- <button type="submit" class="btn btn-secondary btn-lg" id="generateMealBtn">Let's Eat</button> -->
+                </form>
             </div>
             <div id="drinksec">
-                <p>What would you like to drink?</p>
-                <input type="text">
-                <button type="button" class="btn btn-secondary btn-lg" id="generateCocktailBtn">Let's Drink</button>
+                <p id='drinkHeading'>What would you like to drink?</p>
+                <form id='drinkSearchForm'>
+                    <div><strong><p id='drinkNameText'>Choose by Drink Name:</p></strong></div>
+                    <select id='drinkNameSelector'>                    
+                        <option value='Choose By Drink Name'class='default'>Choose By Drink Name</option>
+                    </select>
+                    <div><strong><p id='drinkAlcoholText'>Choose by Alcohol:</p></strong></div>
+                    <select id='drinkAlcoholSelector'>                    
+                        <option value='Choose By Alcohol'class='default'>Choose By Alcohol</option>
+                    </select>
+                </form>
             </div>
             <div id="bothsec">
-                <p id=bothp>Get me both!</p>
-                <button type="button" class="btn btn-secondary btn-lg">Wine & Dine</button>
+                <p>Get me both</p>
+                <button type="button" class="btn btn-secondary btn-lg" id="wineAndDine">Wine & Dine</button>
             </div>
-    </div>
-        <div id='mealContainer'> </div>
-        <div id="DrinkContainer"></div> 
+        </div>
+
+        <div class='container'>
+            <div id='mealTitleContainer'></div>
+                <div class="row" id='mealContainer'></div>
+            <div id='drinkTitleContainer'></div>
+                <div class='row' id='drinkContainer'></div>
+        </div>
+        
 
     </body>
+    
+    <script src="js/libs/jquery-3.4.1.min.js"></script>
+    <script src="js/libs/popper-1.14.3.min.js"></script>
+    <script src="js/libs/bootstrap-4.1.3.min.js"></script>
+    <script src="js/libs/axios-0.19.2.min.js"></script>
+    <script src='js/granim.min.js'></script>
+    <script src='js/gradient.js'></script>
+    <script src='js/search.js'></script>
+    
+    
 
-    <script src='meal.js'></script>
-    <script src="wiley-cocktail-api.js"></script>
+    <script src='js/meal.js'></script>
+    <script src="js/wiley-cocktail-api.js"></script>
+
+    
 
 </html>
