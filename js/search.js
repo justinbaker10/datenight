@@ -109,19 +109,29 @@ $(document).ready(function (evt) {
         
         }
 
-        // jQuery Scroll Function 
-        $('html, body').animate({
-            scrollTop: $("#genDrinkSearchTitle").offset().top
-        }, 1000);
-    
+         // jQuery Scroll Function         
+         function scroll (length) {
+
+            if (length > 4) {
+        
+                $('html, body').animate({
+                    scrollTop: $("#genDrinkSearchTitle").offset().top
+                }, 1000);
+                
+                return length
+            }
+        }
+
         axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkSearch)
             .then(function (response) {
             
             let drinks = response.data.drinks
+            let drinkLength = drinks.length
 
             console.log(response.data, "this is the Response")
             console.log(drinks, "this is the DRINKS")
             renderDrinks(drinks)
+            scroll(drinkLength)
             return drinks
             })
 
@@ -148,26 +158,33 @@ $(document).ready(function (evt) {
                         <p id='searchTitle'>NICE! Here are some ${drink} to choose from!</p>
                     </div>
             `)
-
-
-            
         }
 
-        // jQuery Scroll Function 
-        $('html, body').animate({
-            scrollTop: $("#genDrinkSearchTitle").offset().top
-        }, 1000);
+         // jQuery Scroll Function         
+         function scroll (length) {
 
+            if (length > 4) {
+        
+                $('html, body').animate({
+                    scrollTop: $("#genDrinkSearchTitle").offset().top
+                }, 1000);
+                
+                return length
+            }
+        }
 
+        
         // Network Request for drinks by Ingredients (Alcohol)
         axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drinkSearch)
             .then(function (response) {
             
             let drinks = response.data.drinks
+            let drinkLength = drinks.length
 
             console.log(response, "this is the Response~~~~~")
             console.log(drinks, "this is the Alcohol")
             renderDrinks(drinks)
+            scroll(drinkLength)
             return drinks
             })
 
@@ -176,7 +193,7 @@ $(document).ready(function (evt) {
 
 
     // Starts Meals network calls
-
+    //Category selection
     axios.get('https://www.themealdb.com/api/json/v1/1/categories.php')
         .then(function (response) {
             
@@ -191,6 +208,7 @@ $(document).ready(function (evt) {
 
         })
 
+        // Area selection
         axios.get('https://www.themealdb.com/api/json/v1/1/list.php?a=list.php')
         .then(function (response) {
             
@@ -205,8 +223,7 @@ $(document).ready(function (evt) {
 
         })
 
-
-            //Function to capture value of 'foodSearch' field
+    //Function to capture value of 'foodSearch' field
     $('#categorySelector').on('change', function (evt) {
 
         const defaultOpt = $('#areaSelector').find('.default')
@@ -216,8 +233,10 @@ $(document).ready(function (evt) {
                         
         renderMealTitle(categoryVal)
 
-        function renderMealTitle (title){
-           
+        
+
+        function renderMealTitle (title) {
+                      
             $('#mealTitleContainer').html('')
 
             $('#mealTitleContainer').append(`
@@ -230,23 +249,31 @@ $(document).ready(function (evt) {
 
         console.log(categoryVal, " is what I typed in to Lets Eat Search")
 
+        // jQuery Scroll Function         
+        function scroll (length) {
 
-        // jQuery Scroll Function 
-        $('html, body').animate({
-            scrollTop: $("#genMealSearchTitle").offset().top
-        }, 1000);
+            if (length > 4) {
         
+                $('html, body').animate({
+                    scrollTop: $("#genMealSearchTitle").offset().top
+                }, 1000);
+                
+                return length
+            }
+        }
         
 
         axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=" + categoryVal)
         .then(function (response) {
             console.log(response, "this is RESPONNNSEEE")
         
-            var meals = response.data.meals
+            let meals = response.data.meals
+            let mealLength = meals.length
+
 
             console.log(response.data, "this is the Response")
-            // console.log(meals.length, "this is the MEALS")
             renderMeals(meals)
+            scroll(mealLength)
             
             return meals
                 
@@ -266,7 +293,7 @@ $(document).ready(function (evt) {
                     
         renderMealTitle(areaSelectorVal)
 
-        function renderMealTitle (title){
+        function renderMealTitle (title) {
             
             $('#mealTitleContainer').html('')
 
@@ -279,10 +306,18 @@ $(document).ready(function (evt) {
         }        
         console.log(areaSelectorVal, " is what I typed in to Lets Eat Search")
 
-         // jQuery Scroll Function 
-         $('html, body').animate({
-            scrollTop: $("#genMealSearchTitle").offset().top
-        }, 1000);
+         // jQuery Scroll Function         
+         function scroll (length) {
+
+            if (length > 4) {
+        
+                $('html, body').animate({
+                    scrollTop: $("#genMealSearchTitle").offset().top
+                }, 1000);
+                
+                return length
+            }
+        }
 
 
         // Gets meals filtered by Area
