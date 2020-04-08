@@ -2,10 +2,11 @@ var granimInstance = new Granim({
     element: '#canvas-image-blending',
     direction: 'top-bottom',
     isPausedWhenNotInView: true,
-    image : {
+    /*image : {
         source: '../img/bg.png',
         blendingMode: 'overlay'
-    },
+    }
+    */
     states : {
         "default-state": {
             gradients: [
