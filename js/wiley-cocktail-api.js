@@ -3,25 +3,31 @@
         'x-api-key': '1' 
         }); 
          
-        const DrinkBtn = document.getElementById("wineAndDine") 
-        const cocktailContainer = document.getElementById("drinkContainer") 
+        const DrinkBtn = document.getElementById("generateCocktailBtn") 
+        const CocktailContainer = document.getElementById("DrinkContainer") 
         DrinkBtn.addEventListener("click",clickDrinkBtn) 
         function clickDrinkBtn() { 
-            $('#drinkTitleContainer').html('')
-            $('#drinkContainer').html('')
         
             fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php", DrinkHeaders) 
             .then(function(response) { 
                 console.log("response is good")
             return response.json() 
         })
-         .then(function(data) { 
-         console.log(data)
-         const Drinkdata = data.drinks[0]
-         console.log(Drinkdata.strInstructions) 
-         const DrinkName = `<h2>${Drinkdata.strDrink}</h2>`
-         const DrinkInstruc = `<p>${Drinkdata.strInstructions}</p>`
-         const DrinkPicture = ` <img src=${Drinkdata.strDrinkThumb}> ` 
-        
-         cocktailContainer.innerHTML=DrinkName+DrinkPicture+DrinkInstruc
-    })}
+         .then(getDrinkData)}
+
+
+         function getDrinkData (data) { 
+            console.log(data)
+            const Drinkdata = data.drinks[0]
+            console.log(Drinkdata.strInstructions) 
+            const drinkCard = `<div class="card" id="drinkCard" style="width: 18rem;">
+            <img src=${Drinkdata.strDrinkThumb} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${Drinkdata.strDrink}</h5>
+              
+            </div>
+          </div>`
+            DrinkContainer.innerHTML=drinkCard
+      
+       }
+  
