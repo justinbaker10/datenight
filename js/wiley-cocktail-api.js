@@ -3,8 +3,10 @@
         'x-api-key': '1' 
         }); 
          
+
         const DrinkBtn = document.getElementById("wineAndDine") 
         const CocktailContainer = document.getElementById("mealContainer2") 
+
         DrinkBtn.addEventListener("click",clickDrinkBtn) 
         function clickDrinkBtn() { 
         
@@ -19,6 +21,7 @@
          function getDrinkData (data) { 
             console.log(data)
             const Drinkdata = data.drinks[0]
+
             const drinkCard = `
             <div class='card' id="drinkCard">
             <img src=${Drinkdata.strDrinkThumb} class="card-img-top" alt="...">
@@ -31,3 +34,4 @@
             $('#drinkContainer2').html(drinkCard)
       
        }
+

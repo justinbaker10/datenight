@@ -6,17 +6,21 @@ $(document).ready(function () {
     
     
     const mealBtn = document.getElementById('wineAndDine')
+
     const mealContainer = document.getElementById('mealContainer2')
+
     mealBtn.addEventListener("click", clickMealBtn)
       function clickMealBtn () {
   
         $('#mealTitleContainer').html('')
+
         $('#drinkTitleContainer').html('')
         $('#mealContainer').html('')
         $('#drinkContainer').html('')
 
 
        fetch("https://www.themealdb.com/api/json/v1/1/random.php", mealHeaders)
+
         .then(function(response){
             return response.json()
              
@@ -24,6 +28,7 @@ $(document).ready(function () {
           .then(function(data) {
             console.log(data,"CL Data")
             const mealData = data.meals[0]
+
             const mealCard = `
             <div class='card' id="drinkCard">
             <img src=${mealData.strMealThumb} class="card-img-top" alt="...">
@@ -40,10 +45,11 @@ $(document).ready(function () {
             $('html, body').animate({
               scrollTop: $("#this").offset().top
             }, 1000);
+
             
               
           })
           
       }
-      
+
   })
