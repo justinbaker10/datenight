@@ -45,6 +45,10 @@ h1 {
     
 }
 
+#container2 {
+display: flex;
+}
+
 #genMealSearchTitle, #genDrinkSearchTitle {
    
     background-color: black;
@@ -81,6 +85,16 @@ select {
 #areaText, #drinkAlcoholText{
 
     margin-top: 25px;
+}
+
+h5.card-title {
+padding-top: 25px;
+
+}
+
+#drinkCard {
+    
+    text-align: center;
 }
 
 
