@@ -84,7 +84,7 @@ $(document).ready(function (evt) {
 
             $('#drinkTitleContainer').append(`
                     <div class="col-sm-12" id='genDrinkSearchTitle'>
-                        <p id='searchTitle'>NICE! Here are ${length} ${drink} to choose from!</p>
+                        <p id='searchTitle'>NICE! Here are some ${drink} to choose from!</p>
                     </div>
             `)
         }
@@ -157,7 +157,7 @@ $(document).ready(function (evt) {
 
             $('#drinkTitleContainer').append(`
                     <div class="col-sm-12" id='genDrinkSearchTitle'>
-                        <p id='searchTitle'>NICE! Here are ${length} ${drink} to choose from!</p>
+                        <p id='searchTitle'>NICE! Here are some ${drink} to choose from!</p>
                     </div>
             `)
         }
@@ -235,7 +235,7 @@ $(document).ready(function (evt) {
 
             $('#mealTitleContainer').append(`
                     <div class="col-sm-12" id='genMealSearchTitle'>
-                        <p id='searchTitle'>Great Choice! Here are ${length} ${category} meals to choose from!</p>
+                        <p id='searchTitle'>Great Choice! Here are ${category} meals to choose from!</p>
                     </div>
             `)
         
