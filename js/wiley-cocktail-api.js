@@ -3,8 +3,10 @@
         'x-api-key': '1' 
         }); 
          
-        const DrinkBtn = document.getElementById("generateCocktailBtn") 
-        const CocktailContainer = document.getElementById("DrinkContainer") 
+
+        const DrinkBtn = document.getElementById("wineAndDine") 
+        const CocktailContainer = document.getElementById("mealContainer2") 
+
         DrinkBtn.addEventListener("click",clickDrinkBtn) 
         function clickDrinkBtn() { 
         
@@ -19,15 +21,17 @@
          function getDrinkData (data) { 
             console.log(data)
             const Drinkdata = data.drinks[0]
-            console.log(Drinkdata.strInstructions) 
-            const drinkCard = `<div class="card" id="drinkCard" style="width: 18rem;">
+
+            const drinkCard = `
+            <div class='card' id="drinkCard">
             <img src=${Drinkdata.strDrinkThumb} class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${Drinkdata.strDrink}</h5>
-              
+              <h6>Mix your own drink:</h6>
+              <p>${Drinkdata.strInstructions}</p>
             </div>
-          </div>`
-            DrinkContainer.innerHTML=drinkCard
+            </div>`
+            $('#drinkContainer2').html(drinkCard)
       
        }
-  
+
